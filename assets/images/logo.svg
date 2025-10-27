@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Logo ONG">
+  <rect rx="18" width="120" height="120" fill="#0b73ff"/>
+  <g fill="#fff" transform="translate(20,28)">
+    <path d="M0 50c10-14 30-28 50-6 6 6 8 20 8 20H0z"/>
+    <circle cx="38" cy="18" r="10"/>
+  </g>
+</svg>
