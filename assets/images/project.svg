@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Imagem de projeto">
-  <rect width="800" height="450" fill="#e6f2ff"/>
-  <g fill="#0b73ff" transform="translate(60,60)">
-    <rect width="220" height="120" rx="12"/>
-    <rect y="140" width="340" height="220" rx="12"/>
-  </g>
-</svg>
