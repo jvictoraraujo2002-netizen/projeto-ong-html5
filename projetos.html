@@ -1,69 +1,64 @@
+
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projetos — ONG Exemplo</title>
-  <meta name="description" content="Conheça os projetos e oportunidades de voluntariado da ONG Exemplo.">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Projetos — ONG Exemplo</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
-  <header class="header" role="banner">
-    <div class="container site-brand">
-      <img src="assets/images/logo.svg" alt="Logo ONG Exemplo">
-      <nav aria-label="Principal navegação">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="header">
+  <div class="header-inner container">
+    <div class="brand"><a href="index.html"><img src="assets/images/logo.png" alt="Logo ONG Exemplo"></a><strong>ONG Exemplo</strong></div>
+    <nav class="nav" role="navigation" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cadastro.html">Cadastro</a>
+    </nav>
+    <button class="hamburger" aria-label="Abrir menu">☰</button>
+  </div>
+  <div class="mobile-nav container" style="display:none">
+    <a href="index.html">Início</a><br>
+    <a href="projetos.html">Projetos</a><br>
+    <a href="cadastro.html">Cadastro</a>
+  </div>
+</header>
 
-  <main class="container" role="main">
-    <h1>Projetos sociais</h1>
-    <p>Envolva-se como voluntário ou apoie financeiramente nossos projetos.</p>
+<main class="container">
+  <h1 id="projetos-title">Projetos Sociais</h1>
+  <section class="grid" aria-labelledby="projetos-title" style="margin-top:var(--s-3)">
+    <article class="card col-4">
+      <picture>
+        <source srcset="assets/images/project1.webp" type="image/webp">
+        <img src="assets/images/project1.png" alt="Oficina de Capacitação" class="responsive">
+      </picture>
+      <h2>Oficina de Capacitação</h2>
+      <p>Meta: capacitar 200 jovens.</p>
+      <div style="margin-top:var(--s-2)"><span class="badge">Educação</span> <span class="badge">Capacitação</span></div>
+      <div style="margin-top:var(--s-2)"><button class="btn" data-modal-open>Saiba mais</button> <button class="btn ghost" data-toast>Doar</button></div>
+    </article>
 
-    <section aria-labelledby="list-projects" class="cards">
-      <article class="card" aria-labelledby="proj1-title">
-        <img src="assets/images/project.svg" alt="Oficina de capacitação" class="responsive">
-        <h2 id="proj1-title">Oficina de Capacitação</h2>
-        <p>Curso de formação profissional para jovens. Meta: formar 200 jovens em 12 meses.</p>
-        <div class="progress" aria-hidden="true" style="margin-top:0.5rem"><span style="width:45%"></span></div>
-        <p class="small">Progresso: 45% — Arrecadado R$ 9.000 / Meta R$ 20.000</p>
-        <p><a href="#volunteer-apply" class="btn">Quero ser voluntário</a></p>
-      </article>
+    <article class="card col-4">
+      <picture>
+        <source srcset="assets/images/project2.webp" type="image/webp">
+        <img src="assets/images/project2.png" alt="Campanha de Saúde" class="responsive">
+      </picture>
+      <h2>Campanha de Saúde</h2>
+      <p>Ações de prevenção e atendimento.</p>
+      <div style="margin-top:var(--s-2)"><span class="badge">Saúde</span></div>
+    </article>
 
-      <article class="card" aria-labelledby="proj2-title">
-        <img src="assets/images/project.svg" alt="Campanha de saúde" class="responsive">
-        <h2 id="proj2-title">Campanha de Saúde Comunitária</h2>
-        <p>Ações de prevenção e atendimento em áreas remotas.</p>
-        <p><a href="#donate" class="btn">Doar agora</a></p>
-      </article>
-    </section>
+    <article class="card col-4">
+      <h2>Como Ajudar</h2>
+      <p>Seja voluntário ou doe para campanhas.</p>
+    </article>
 
-    <aside aria-labelledby="volunteer-title" style="margin-top:1rem">
-      <h2 id="volunteer-title">Voluntariado</h2>
-      <p>Temos vagas regulares para professores voluntários, apoio logístico e comunicação.</p>
-      <p id="volunteer-apply">Para se candidatar, preencha o formulário de cadastro: <a href="cadastro.html">Abrir formulário</a></p>
-    </aside>
+  </section>
+</main>
 
-    <section aria-labelledby="donate-title" id="donate" class="card" style="margin-top:1rem">
-      <h2 id="donate-title">Como doar</h2>
-      <p>As doações podem ser feitas via transferência, cartão ou plataformas parceiras. Fornecemos relatórios de transparência periodicamente.</p>
-      <ul>
-        <li>PIX: 00.000.000/0000-00</li>
-        <li>Conta: Banco Ex — Agência 0000 — Conta 000000-0</li>
-      </ul>
-    </section>
+<!-- Modal -->
+<div class="modal-backdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">Detalhes do Projeto</h2><p>Informações detalhadas sobre o projeto.</p><div style="text-align:right"><button data-modal-close class="btn">Fechar</button></div></div>
+</div>
 
-  </main>
+<div class="toast" role="status" aria-live="polite">Mensagem enviada</div>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p class="small">© ONG Exemplo — Transparência e impacto social</p>
-    </div>
-  </footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
