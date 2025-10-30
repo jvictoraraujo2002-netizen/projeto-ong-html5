@@ -1,14 +1,23 @@
-// Menu hambúrguer
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('header .menu ul');
-hamburger.addEventListener('click', () => { menu.classList.toggle('active'); });
+// ==========================
+// MENU HAMBÚRGUER
+// ==========================
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector("nav ul");
 
-// Formulário de contato
-const formContato = document.getElementById('form-contato');
-if(formContato){
-  formContato.addEventListener('submit', e=>{
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+// ==========================
+// FORMULÁRIO DE CONTATO
+// ==========================
+const form = document.querySelector("form");
+if (form) {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert('Mensagem enviada com sucesso!');
-    formContato.reset();
+    const alertBox = document.querySelector(".alert");
+    alertBox.style.display = "block";
+    alertBox.textContent = "✅ Mensagem enviada com sucesso!";
+    form.reset();
   });
 }
