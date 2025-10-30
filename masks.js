@@ -1,42 +1,34 @@
 // =========================
-// MENU HAMBURGUER MOBILE
+// MÁSCARAS DE INPUT
 // =========================
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav ul");
 
-menuToggle.addEventListener("click", () => {
-  nav.classList.toggle("show");
-});
-
-// =========================
-// SUBMENU DROPDOWN
-// =========================
-const submenuParents = document.querySelectorAll("nav ul li a");
-
-submenuParents.forEach((link) => {
-  const submenu = link.nextElementSibling;
-  if (submenu && submenu.classList.contains("submenu")) {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      submenu.classList.toggle("show");
-    });
-  }
-});
-
-// =========================
-// ALERT DE FORMULÁRIO (EXEMPLO)
-// =========================
-const form = document.querySelector("form");
-const alertBox = document.querySelector(".alert");
-
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alertBox.style.display = "block";
-    alertBox.textContent = "Formulário enviado com sucesso!";
-    setTimeout(() => {
-      alertBox.style.display = "none";
-    }, 3000);
+// Telefone: (XX) XXXXX-XXXX
+function maskPhone(input) {
+  input.addEventListener("input", () => {
+    let value = input.value.replace(/\D/g, "");
+    if (value.length > 11) value = value.slice(0, 11);
+    value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+    value = value.replace(/(\d{5})(\d{1,4})$/, "$1-$2");
+    input.value = value;
   });
 }
 
+// CPF: XXX.XXX.XXX-XX
+function maskCPF(input) {
+  input.addEventListener("input", () => {
+    let value = input.value.replace(/\D/g, "");
+    if (value.length > 11) value = value.slice(0, 11);
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    input.value = value;
+  });
+}
+
+// APLICAR MÁSCARAS
+document.addEventListener("DOMContentLoaded", () => {
+  const phoneInput = document.querySelector("input[type='tel']");
+  const cpfInput = document.querySelector("input[name='cpf']");
+  if (phoneInput) maskPhone(phoneInput);
+  if (cpfInput) maskCPF(cpfInput);
+});
