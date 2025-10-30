@@ -5,66 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Educação - ONG Exemplo</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="img/logoong.jpg" alt="Logotipo ONG" width="120">
+<header>
+  <div class="logo">
+    <img src="img/logoong.jpg" alt="Logo ONG" class="logo">
+  </div>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">Projetos</a>
+        <ul class="submenu">
+          <li><a href="educacao.html" class="active">Educação</a></li>
+          <li><a href="saude.html">Saúde</a></li>
+          <li><a href="meio-ambiente.html">Meio Ambiente</a></li>
+        </ul>
+      </li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <img src="img/livroeducacao.jpg" alt="Livros e Educação">
+    <div class="hero-text">
+      <h1>Educação: Base da Transformação</h1>
+      <p>Promovendo alfabetização, inclusão digital e capacitação.</p>
     </div>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li>
-          <a href="#">Projetos</a>
-          <ul class="submenu">
-            <li><a href="educacao.html" class="active">Educação</a></li>
-            <li><a href="saude.html">Saúde</a></li>
-            <li><a href="meio-ambiente.html">Meio Ambiente</a></li>
-          </ul>
-        </li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-      <div class="hamburger">&#9776;</div>
-    </nav>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero-educacao">
-      <img src="img/livroeducacao.jpg" alt="Livros e Educação" class="hero-img">
-      <div class="hero-text">
-        <h1>Educação: A Base da Transformação</h1>
-        <p>Promovendo alfabetização, inclusão digital e capacitação para todos.</p>
-      </div>
-    </section>
+  <section class="projects-section">
+    <h2>Projetos Educacionais</h2>
+    <div class="card">
+      <img src="img/educacao1.jpg" alt="Curso de Alfabetização">
+      <span class="badge">Curso</span>
+      <h3>Curso de Alfabetização</h3>
+      <p>Aulas para jovens e adultos com metodologia inclusiva.</p>
+    </div>
+    <div class="card">
+      <img src="img/educacao2.jpg" alt="Capacitação Profissional">
+      <span class="badge">Oficina</span>
+      <h3>Capacitação Profissional</h3>
+      <p>Oficinas práticas para preparar pessoas ao mercado de trabalho.</p>
+    </div>
+  </section>
+</main>
 
-    <section class="project-detail">
-      <h2>Nossos Projetos Educacionais</h2>
-      <div class="project-cards">
-        <div class="card">
-          <img src="img/educacao1.jpg" alt="Curso de Alfabetização">
-          <div class="card-content">
-            <h3>Curso de Alfabetização</h3>
-            <p>Aulas para jovens e adultos com metodologia moderna e inclusiva.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/educacao2.jpg" alt="Capacitação Profissional">
-          <div class="card-content">
-            <h3>Capacitação Profissional</h3>
-            <p>Oficinas e cursos práticos para preparar pessoas ao mercado de trabalho.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<footer>
+  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="masks.js"></script>
 </body>
 </html>
