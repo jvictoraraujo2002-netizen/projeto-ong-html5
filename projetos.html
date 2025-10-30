@@ -1,69 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projetos — ONG Exemplo</title>
-  <meta name="description" content="Conheça os projetos e oportunidades de voluntariado da ONG Exemplo.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos - ONG Exemplo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header" role="banner">
-    <div class="container site-brand">
-      <img src="assets/images/logo.svg" alt="Logo ONG Exemplo">
-      <nav aria-label="Principal navegação">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
+<header>
+  <!-- Menu igual ao index.html -->
+  <div class="logo">ONG Exemplo</div>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="projetos.html">Projetos</a>
+        <ul class="submenu">
+          <li><a href="educacao.html">Educação</a></li>
+          <li><a href="saude.html">Saúde</a></li>
+          <li><a href="meio-ambiente.html">Meio Ambiente</a></li>
         </ul>
-      </nav>
+      </li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-section">
+    <h1>Todos os Projetos</h1>
+    <div class="cards">
+      <div class="card">
+        <h3>Educação</h3>
+        <p>Projetos de alfabetização e capacitação.</p>
+        <a href="educacao.html" class="btn-primary btn-small">Saiba Mais</a>
+      </div>
+      <div class="card">
+        <h3>Saúde</h3>
+        <p>Campanhas de prevenção e apoio à saúde.</p>
+        <a href="saude.html" class="btn-primary btn-small">Saiba Mais</a>
+      </div>
+      <div class="card">
+        <h3>Meio Ambiente</h3>
+        <p>Ações de preservação e conscientização.</p>
+        <a href="meio-ambiente.html" class="btn-primary btn-small">Saiba Mais</a>
+      </div>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main class="container" role="main">
-    <h1>Projetos sociais</h1>
-    <p>Envolva-se como voluntário ou apoie financeiramente nossos projetos.</p>
+<footer>
+  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
+</footer>
 
-    <section aria-labelledby="list-projects" class="cards">
-      <article class="card" aria-labelledby="proj1-title">
-        <img src="assets/images/project.svg" alt="Oficina de capacitação" class="responsive">
-        <h2 id="proj1-title">Oficina de Capacitação</h2>
-        <p>Curso de formação profissional para jovens. Meta: formar 200 jovens em 12 meses.</p>
-        <div class="progress" aria-hidden="true" style="margin-top:0.5rem"><span style="width:45%"></span></div>
-        <p class="small">Progresso: 45% — Arrecadado R$ 9.000 / Meta R$ 20.000</p>
-        <p><a href="#volunteer-apply" class="btn">Quero ser voluntário</a></p>
-      </article>
-
-      <article class="card" aria-labelledby="proj2-title">
-        <img src="assets/images/project.svg" alt="Campanha de saúde" class="responsive">
-        <h2 id="proj2-title">Campanha de Saúde Comunitária</h2>
-        <p>Ações de prevenção e atendimento em áreas remotas.</p>
-        <p><a href="#donate" class="btn">Doar agora</a></p>
-      </article>
-    </section>
-
-    <aside aria-labelledby="volunteer-title" style="margin-top:1rem">
-      <h2 id="volunteer-title">Voluntariado</h2>
-      <p>Temos vagas regulares para professores voluntários, apoio logístico e comunicação.</p>
-      <p id="volunteer-apply">Para se candidatar, preencha o formulário de cadastro: <a href="cadastro.html">Abrir formulário</a></p>
-    </aside>
-
-    <section aria-labelledby="donate-title" id="donate" class="card" style="margin-top:1rem">
-      <h2 id="donate-title">Como doar</h2>
-      <p>As doações podem ser feitas via transferência, cartão ou plataformas parceiras. Fornecemos relatórios de transparência periodicamente.</p>
-      <ul>
-        <li>PIX: 00.000.000/0000-00</li>
-        <li>Conta: Banco Ex — Agência 0000 — Conta 000000-0</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container">
-      <p class="small">© ONG Exemplo — Transparência e impacto social</p>
-    </div>
-  </footer>
+<script src="script.js"></script>
+<script src="masks.js"></script>
 </body>
 </html>
+
