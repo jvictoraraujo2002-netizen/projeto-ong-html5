@@ -1,42 +1,16 @@
-// =========================
-// MENU HAMBURGUER MOBILE
-// =========================
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav ul");
+// Menu hambúrguer
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('header .menu ul');
 
-menuToggle.addEventListener("click", () => {
-  nav.classList.toggle("show");
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('active');
 });
 
-// =========================
-// SUBMENU DROPDOWN
-// =========================
-const submenuParents = document.querySelectorAll("nav ul li a");
-
-submenuParents.forEach((link) => {
-  const submenu = link.nextElementSibling;
-  if (submenu && submenu.classList.contains("submenu")) {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      submenu.classList.toggle("show");
-    });
-  }
+// Formulário simples
+const form = document.getElementById('form-contato');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Mensagem enviada com sucesso!');
+  form.reset();
 });
-
-// =========================
-// ALERT DE FORMULÁRIO (EXEMPLO)
-// =========================
-const form = document.querySelector("form");
-const alertBox = document.querySelector(".alert");
-
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alertBox.style.display = "block";
-    alertBox.textContent = "Formulário enviado com sucesso!";
-    setTimeout(() => {
-      alertBox.style.display = "none";
-    }, 3000);
-  });
-}
 
