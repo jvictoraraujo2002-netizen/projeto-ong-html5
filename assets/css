@@ -1,233 +1,256 @@
-/* =============================
-   DESIGN SYSTEM
-============================= */
+/* 🎨 ================================
+   SISTEMA DE DESIGN MODERNO ONG
+   ================================ */
+
 :root {
-  /* Cores */
-  --cor-primaria: #2c7a7b;
-  --cor-secundaria: #319795;
-  --cor-destaque: #38b2ac;
-  --cor-fundo: #f7fafc;
-  --cor-texto: #2d3748;
-  --cor-branca: #ffffff;
-  --cor-cinza: #e2e8f0;
-  --cor-hover: #285e61;
-  --cor-alerta: #e53e3e;
+  /* Paleta de Cores */
+  --color-primary: #1e88e5;
+  --color-primary-light: #64b5f6;
+  --color-secondary: #43a047;
+  --color-accent: #fdd835;
+  --color-danger: #e53935;
+  --color-success: #66bb6a;
+  --color-neutral-dark: #212121;
+  --color-neutral-light: #f5f5f5;
 
   /* Tipografia */
-  --fonte-titulo: 'Poppins', sans-serif;
-  --fonte-texto: 'Open Sans', sans-serif;
-  --tamanho-h1: 2.5rem;
-  --tamanho-h2: 2rem;
-  --tamanho-h3: 1.4rem;
-  --tamanho-texto: 1rem;
-  --tamanho-pequeno: 0.9rem;
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
 
-  /* Espaçamentos */
-  --esp-1: 8px;
-  --esp-2: 16px;
-  --esp-3: 24px;
-  --esp-4: 32px;
-  --esp-5: 48px;
-  --esp-6: 64px;
+  /* Hierarquia tipográfica */
+  --fs-1: 2.5rem;
+  --fs-2: 1.75rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1rem;
+  --fs-5: 0.875rem;
+
+  /* Sistema de espaçamento (em px) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Grid */
+  --max-width: 1200px;
 }
 
-/* =============================
-   GERAL
-============================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ==========================
+   REGRAS GERAIS
+   ========================== */
 body {
-  font-family: var(--fonte-texto);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  font-family: var(--font-body);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  margin: 0;
   line-height: 1.6;
 }
 
-/* =============================
-   HEADER E MENU
-============================= */
 header {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branca);
-  padding: var(--esp-2) var(--esp-3);
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.logo img {
-  height: 60px;
+header img.logo {
+  height: 50px;
   border-radius: 8px;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
-  gap: var(--esp-3);
-  align-items: center;
+  list-style: none;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-  color: var(--cor-branca);
+  color: white;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  font-weight: 500;
+  padding: var(--space-1) var(--space-2);
+  transition: background 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--cor-destaque);
+  background: var(--color-primary-light);
+  border-radius: 6px;
 }
 
-/* Submenu */
-.submenu {
+/* ==========================
+   MENU HAMBÚRGUER
+   ========================== */
+.menu-toggle {
   display: none;
-  position: absolute;
-  background-color: var(--cor-primaria);
-  padding: var(--esp-2);
-  border-radius: 8px;
-  flex-direction: column;
-  gap: var(--esp-2);
-}
-
-nav li:hover .submenu {
-  display: flex;
-}
-
-/* Hamburger (mobile) */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
+  font-size: 28px;
   cursor: pointer;
 }
 
-/* =============================
-   HERO
-============================= */
-.hero, .hero-educacao {
-  position: relative;
-  text-align: center;
-  padding: var(--esp-5) var(--esp-3);
-  background-color: var(--cor-secundaria);
-  color: var(--cor-branca);
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--color-primary);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
 }
 
-.hero img,
-.hero-educacao .hero-img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 16px;
-  filter: brightness(0.8);
-  margin-bottom: var(--esp-3);
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--cor-branca);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-
-.hero h1 {
-  font-family: var(--fonte-titulo);
-  font-size: var(--tamanho-h1);
-  margin-bottom: var(--esp-2);
-}
-
-/* =============================
-   BOTÕES
-============================= */
-.btn-primary, .btn-secondary {
-  background-color: var(--cor-destaque);
-  color: var(--cor-branca);
-  padding: var(--esp-2) var(--esp-3);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.btn-primary:hover, .btn-secondary:hover {
-  background-color: var(--cor-hover);
-}
-
-/* =============================
-   PROJETOS (CARDS)
-============================= */
-.projects-section, .project-detail {
-  padding: var(--esp-5) var(--esp-3);
-  text-align: center;
-}
-
-.projects-grid, .project-cards {
+/* ==========================
+   GRID DE 12 COLUNAS
+   ========================== */
+.container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--esp-3);
-  margin-top: var(--esp-3);
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-3);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-3);
 }
 
-.project-card, .card {
-  background-color: var(--cor-branca);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: 0.3s;
+.card {
+  grid-column: span 4;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.project-card:hover, .card:hover {
+.card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.card img, .project-card img {
+.card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: var(--esp-3);
+  border-radius: 12px;
 }
 
 .card h3 {
-  font-size: var(--tamanho-h3);
-  margin-bottom: var(--esp-1);
-  color: var(--cor-primaria);
+  font-size: var(--fs-3);
+  color: var(--color-primary);
+  margin: var(--space-2) 0;
 }
 
-/* =============================
-   FORMULÁRIOS E CONTATO
-============================= */
-form {
-  display: grid;
-  gap: var(--esp-2);
-  background: var(--cor-branca);
-  padding: var(--esp-4);
-  border-radius: 12px;
-  max-width: 600px;
-  margin: var(--esp-4) auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.card p {
+  font-size: var(--fs-4);
 }
 
-form input, form textarea, form select {
-  width: 100%;
-  padding: var(--esp-2);
-  border: 1px solid var(--cor-cinza);
+/* ==========================
+   BOTÕES
+   ========================== */
+button, .btn {
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: var(--space-1) var(--space-3);
   border-radius: 8px;
-  font-size: var(--tamanho-texto);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: var(--fs-4);
+}
+
+button:hover, .btn:hover {
+  background: var(--color-success);
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* ==========================
+   FORMULÁRIO DE CONTATO
+   ========================== */
+form {
+  background: white;
+  padding: var(--space-4);
+  border-radius: 16px;
+  max-width: 600px;
+  margin: var(--space-4) auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: var(--fs-4);
 }
 
 form input:focus, form textarea:focus {
+  border-color: var(--color-primary);
   outline: none;
-  border-
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.3);
+}
+
+.alert {
+  background: var(--color-success);
+  color: white;
+  padding: var(--space-2);
+  border-radius: 8px;
+  margin-top: var(--space-2);
+  text-align: center;
+  display: none;
+}
+
+/* ==========================
+   BADGES E TAGS
+   ========================== */
+.badge {
+  background: var(--color-accent);
+  color: var(--color-neutral-dark);
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: var(--fs-5);
+  margin: 4px;
+}
+
+/* ==========================
+   BREAKPOINTS
+   ========================== */
+@media (max-width: 1200px) {
+  .card { grid-column: span 6; }
+}
+@media (max-width: 992px) {
+  .card { grid-column: span 6; }
+}
+@media (max-width: 768px) {
+  .card { grid-column: span 12; }
+}
+@media (max-width: 576px) {
+  body { font-size: 14px; }
+}
+@media (max-width: 400px) {
+  header img.logo { height: 40px; }
+}
 
