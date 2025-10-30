@@ -51,16 +51,28 @@ body {
   line-height: 1.6;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-title);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==========================
+   HEADER E NAVEGAÇÃO
+   ========================== */
 header {
   background: var(--color-primary);
   color: white;
-  padding: var(--space-2);
+  padding: var(--space-2) var(--space-3);
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 3px solid var(--color-primary-light);
 }
 
 header img.logo {
@@ -68,9 +80,6 @@ header img.logo {
   border-radius: 8px;
 }
 
-/* ==========================
-   NAVEGAÇÃO
-   ========================== */
 nav ul {
   display: flex;
   list-style: none;
@@ -79,7 +88,6 @@ nav ul {
 
 nav a {
   color: white;
-  text-decoration: none;
   font-weight: 500;
   padding: var(--space-1) var(--space-2);
   transition: background 0.3s ease;
@@ -90,9 +98,30 @@ nav a:hover {
   border-radius: 6px;
 }
 
-/* ==========================
-   MENU HAMBÚRGUER
-   ========================== */
+/* SUBMENU DROPDOWN */
+.submenu {
+  display: none;
+  position: absolute;
+  background: var(--color-primary);
+  margin-top: var(--space-1);
+  list-style: none;
+  border-radius: 6px;
+}
+
+nav li:hover > .submenu {
+  display: block;
+}
+
+.submenu li {
+  margin: 0;
+}
+
+.submenu a {
+  display: block;
+  padding: var(--space-1) var(--space-3);
+}
+
+/* MENU HAMBÚRGUER */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -116,10 +145,44 @@ nav a:hover {
   .menu-toggle {
     display: block;
   }
+  .submenu {
+    position: static;
+  }
 }
 
 /* ==========================
-   GRID DE 12 COLUNAS
+   HERO ORGANIZADO
+   ========================== */
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-3);
+  background: var(--color-primary-light);
+  color: #fff;
+  border-radius: 16px;
+  margin: var(--space-4);
+}
+
+.hero-container img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.hero-text h1 {
+  font-size: var(--fs-1);
+  margin-bottom: var(--space-3);
+}
+
+.hero-text p {
+  font-size: var(--fs-4);
+  margin-bottom: var(--space-3);
+}
+
+/* ==========================
+   GRID DE 12 COLUNAS PARA CONTEÚDO
    ========================== */
 .container {
   display: grid;
@@ -130,8 +193,23 @@ nav a:hover {
   padding: var(--space-3);
 }
 
+/* ==========================
+   PROJETOS
+   ========================== */
+.projects-section h2 {
+  grid-column: span 12;
+  font-size: var(--fs-2);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
 .card {
-  grid-column: span 4;
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -148,4 +226,116 @@ nav a:hover {
 }
 
 .card img {
-  width: 100%
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card h3 {
+  font-size: var(--fs-3);
+  color: var(--color-primary);
+  margin: var(--space-2) 0;
+}
+
+.card p {
+  font-size: var(--fs-4);
+  margin-bottom: var(--space-2);
+}
+
+/* ==========================
+   BOTÕES
+   ========================== */
+button, .btn {
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: var(--fs-4);
+}
+
+button:hover, .btn:hover {
+  background: var(--color-success);
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* ==========================
+   FORMULÁRIO
+   ========================== */
+form {
+  background: white;
+  padding: var(--space-4);
+  border-radius: 16px;
+  max-width: 600px;
+  margin: var(--space-4) auto;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: var(--fs-4);
+}
+
+form input:focus, form textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30,136,229,0.3);
+}
+
+.alert {
+  background: var(--color-success);
+  color: white;
+  padding: var(--space-2);
+  border-radius: 8px;
+  margin-top: var(--space-2);
+  text-align: center;
+  display: none;
+}
+
+/* ==========================
+   BADGES
+   ========================== */
+.badge {
+  background: var(--color-accent);
+  color: var(--color-neutral-dark);
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: var(--fs-5);
+  margin: 4px 0;
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+footer {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: var(--space-3);
+  margin-top: var(--space-4);
+  border-top: 3px solid var(--color-primary-light);
+}
+
+/* ==========================
+   BREAKPOINTS RESPONSIVOS
+   ========================== */
+@media (max-width: 1200px) { .card { grid-column: span 6; } }
+@media (max-width: 992px)  { .card { grid-column: span 6; } }
+@media (max-width: 768px)  { .card { grid-column: span 12; } }
+@media (max-width: 576px)  { body { font-size: 14px; } }
+@media (max-width: 400px)  { header img.logo { height: 40px; } }
