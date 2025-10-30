@@ -8,7 +8,6 @@
   --color-white: #ffffff;
   --color-light-gray: #f1f1f1;
   --color-dark-gray: #333333;
-  --color-black: #000000;
 
   --font-main: 'Poppins', sans-serif;
   --font-size-xs: 0.75rem;
@@ -43,7 +42,7 @@ header .hamburger { display: none; font-size: var(--font-size-xl); cursor: point
 .hero { text-align: center; padding: var(--space-5); background-color: var(--color-primary-light); }
 .hero h1 { font-size: var(--font-size-xl); margin-bottom: var(--space-2); }
 .hero p { margin-bottom: var(--space-3); }
-.btn-primary { background-color: var(--color-secondary); color: var(--color-white); border: none; padding: var(--space-2) var(--space-3); cursor: pointer; }
+.btn-primary { background-color: var(--color-secondary); color: var(--color-white); border: none; padding: var(--space-2) var(--space-3); cursor: pointer; border-radius: 6px; }
 .btn-primary:hover { background-color: var(--color-secondary-dark); }
 
 /* CARDS */
@@ -55,6 +54,7 @@ header .hamburger { display: none; font-size: var(--font-size-xl); cursor: point
 /* FORMULÁRIO */
 form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-2); }
 input, textarea { padding: var(--space-1); border: 1px solid var(--color-dark-gray); border-radius: 4px; font-size: var(--font-size-md); }
+textarea { min-height: 120px; resize: vertical; }
 button { border: none; cursor: pointer; }
 
 /* FOOTER */
