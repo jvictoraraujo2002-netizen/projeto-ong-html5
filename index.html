@@ -7,14 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
   <div class="logo">ONG Exemplo</div>
   <nav class="menu">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li>
-        <a href="projetos.html">Projetos</a>
+        <a href="#">Projetos</a>
         <ul class="submenu">
           <li><a href="educacao.html">Educação</a></li>
           <li><a href="saude.html">Saúde</a></li>
@@ -29,29 +28,34 @@
 </header>
 
 <main>
+  <!-- HERO -->
   <section class="hero">
-    <h1>Bem-vindo à ONG Exemplo</h1>
-    <p>Transformando vidas e impactando o futuro.</p>
-    <a href="contato.html" class="btn-primary">Doe Agora</a>
+    <h1>Transformando Vidas, Impactando o Futuro</h1>
+    <p>Conheça nossos projetos e faça parte dessa transformação.</p>
+    <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
   </section>
 
-  <section class="cards-container">
+  <!-- PROJETOS -->
+  <section class="projects-section">
     <h2>Nossos Projetos</h2>
-    <div class="cards">
-      <div class="card">
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x250/?education" alt="Educação">
         <h3>Educação</h3>
-        <p>Projetos de alfabetização e capacitação.</p>
-        <a href="educacao.html" class="btn-primary btn-small">Saiba Mais</a>
+        <p>Projetos de alfabetização e capacitação para comunidades.</p>
+        <a href="educacao.html" class="btn-secondary">Saiba Mais</a>
       </div>
-      <div class="card">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x250/?health" alt="Saúde">
         <h3>Saúde</h3>
-        <p>Campanhas de prevenção e apoio à saúde.</p>
-        <a href="saude.html" class="btn-primary btn-small">Saiba Mais</a>
+        <p>Campanhas de prevenção e suporte à saúde comunitária.</p>
+        <a href="saude.html" class="btn-secondary">Saiba Mais</a>
       </div>
-      <div class="card">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x250/?environment" alt="Meio Ambiente">
         <h3>Meio Ambiente</h3>
-        <p>Ações de preservação e conscientização.</p>
-        <a href="meio-ambiente.html" class="btn-primary btn-small">Saiba Mais</a>
+        <p>Iniciativas de preservação ambiental e conscientização.</p>
+        <a href="meio-ambiente.html" class="btn-secondary">Saiba Mais</a>
       </div>
     </div>
   </section>
@@ -65,4 +69,3 @@
 <script src="masks.js"></script>
 </body>
 </html>
-
