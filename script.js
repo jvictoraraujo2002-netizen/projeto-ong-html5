@@ -1,23 +1,20 @@
-// ==========================
-// MENU HAMBÚRGUER
-// ==========================
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector("nav ul");
+// MENU HAMBURGUER
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
 
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
+menuToggle.addEventListener('click', () => {
+  navUl.classList.toggle('show');
 });
 
-// ==========================
-// FORMULÁRIO DE CONTATO
-// ==========================
-const form = document.querySelector("form");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const alertBox = document.querySelector(".alert");
-    alertBox.style.display = "block";
-    alertBox.textContent = "✅ Mensagem enviada com sucesso!";
-    form.reset();
+// SUBMENU DROPDOWN (funciona também no mobile)
+const submenuParents = document.querySelectorAll('nav ul li > a');
+
+submenuParents.forEach(parent => {
+  parent.addEventListener('click', (e) => {
+    const next = parent.nextElementSibling;
+    if(next && next.classList.contains('submenu')) {
+      e.preventDefault();
+      next.classList.toggle('show');
+    }
   });
-}
+});
