@@ -3,74 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG Exemplo - Home</title>
+  <title>ONG Exemplo - Início</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header>
-  <div class="logo">
-    <img src="img/logoong.jpg" alt="Logotipo ONG" width="120">
-  </div>
-  <nav class="menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">Projetos</a>
-        <ul class="submenu">
-          <li><a href="educacao.html">Educação</a></li>
-          <li><a href="saude.html">Saúde</a></li>
-          <li><a href="meio-ambiente.html">Meio Ambiente</a></li>
-        </ul>
-      </li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="cadastro.html">Cadastro</a></li>
-    </ul>
-    <div class="hamburger">&#9776;</div>
-  </nav>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <img src="img/hero.jpg" alt="ONG" style="border-radius:12px; max-width:100%;">
-    <h1>Transformando Vidas, Impactando o Futuro</h1>
-    <p>Conheça nossos projetos e faça parte dessa transformação.</p>
-    <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
-  </section>
-
-  <!-- PROJETOS -->
-  <section class="projects-section">
-    <h2>Nossos Projetos</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="img/educacao1.jpg" alt="Educação">
-        <h3>Educação</h3>
-        <p>Projetos de alfabetização e capacitação em comunidades.</p>
-        <a href="educacao.html" class="btn-secondary">Saiba Mais</a>
-      </div>
-      <div class="project-card">
-        <img src="img/saude1.jpg" alt="Saúde">
-        <h3>Saúde</h3>
-        <p>Campanhas de prevenção e apoio à saúde comunitária.</p>
-        <a href="saude.html" class="btn-secondary">Saiba Mais</a>
-      </div>
-      <div class="project-card">
-        <img src="img/meio1.jpg" alt="Meio Ambiente">
-        <h3>Meio Ambiente</h3>
-        <p>Ações de preservação e conscientização ambiental.</p>
-        <a href="meio-ambiente.html" class="btn-secondary">Saiba Mais</a>
-      </div>
+  <header>
+    <div class="logo">
+      <img src="img/logoong.jpg" alt="Logo da ONG" width="120">
     </div>
-  </section>
-</main>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li>
+          <a href="#">Projetos</a>
+          <ul class="submenu">
+            <li><a href="educacao.html">Educação</a></li>
+            <li><a href="saude.html">Saúde</a></li>
+            <li><a href="meio-ambiente.html">Meio Ambiente</a></li>
+          </ul>
+        </li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
 
-<footer>
-  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
-</footer>
+  <main>
+    <section class="hero">
+      <img src="img/hero.jpg" alt="Imagem principal" />
+      <div class="hero-text">
+        <h1>Transformando Vidas, Impactando o Futuro</h1>
+        <p>Conheça nossos projetos e faça parte dessa transformação.</p>
+        <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
+      </div>
+    </section>
 
-<script src="script.js"></script>
-<script src="masks.js"></script>
+    <section class="projects-section">
+      <h2>Nossos Projetos</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="img/educacao1.jpg" alt="Educação">
+          <h3>Educação</h3>
+          <p>Capacitação e alfabetização em comunidades.</p>
+          <a href="educacao.html" class="btn-secondary">Saiba Mais</a>
+        </div>
+        <div class="project-card">
+          <img src="img/saude1.jpg" alt="Saúde">
+          <h3>Saúde</h3>
+          <p>Campanhas de prevenção e apoio comunitário.</p>
+          <a href="saude.html" class="btn-secondary">Saiba Mais</a>
+        </div>
+        <div class="project-card">
+          <img src="img/meio1.jpg" alt="Meio Ambiente">
+          <h3>Meio Ambiente</h3>
+          <p>Educação ambiental e reflorestamento.</p>
+          <a href="meio-ambiente.html" class="btn-secondary">Saiba Mais</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="masks.js"></script>
 </body>
 </html>
 
