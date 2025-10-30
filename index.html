@@ -1,70 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ONG Exemplo — Missão e Impacto</title>
-  <meta name="description" content="ONG Exemplo — Transformando vidas com ações sociais e voluntariado.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG Exemplo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header" role="banner">
-    <div class="container site-brand">
-      <img src="assets/images/logo.svg" alt="Logo ONG Exemplo">
-      <div>
-        <h1 class="sr-only">ONG Exemplo</h1>
-        <p class="small">Missão: Promover inclusão social e oportunidades.</p>
-        <nav aria-label="Principal navegação">
-          <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-          </ul>
-        </nav>
+
+<header>
+  <div class="logo">ONG Exemplo</div>
+  <nav class="menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li>
+        <a href="#projetos">Projetos</a>
+        <ul class="submenu">
+          <li><a href="#educacao">Educação</a></li>
+          <li><a href="#saude">Saúde</a></li>
+          <li><a href="#meio-ambiente">Meio Ambiente</a></li>
+        </ul>
+      </li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <h1>Bem-vindo à ONG Exemplo</h1>
+    <p>Transformando vidas e impactando o futuro.</p>
+    <a href="#contato" class="btn-primary">Doe Agora</a>
+  </section>
+
+  <section id="projetos" class="cards-container">
+    <h2>Nossos Projetos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Educação</h3>
+        <p>Projetos de alfabetização e capacitação.</p>
+        <span class="badge">Importante</span>
+      </div>
+      <div class="card">
+        <h3>Saúde</h3>
+        <p>Campanhas de prevenção e apoio à saúde.</p>
+        <span class="badge">Urgente</span>
+      </div>
+      <div class="card">
+        <h3>Meio Ambiente</h3>
+        <p>Ações de preservação e conscientização.</p>
+        <span class="badge">Novo</span>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container" id="main" role="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <h2 id="hero-title">Bem-vindo à ONG Exemplo</h2>
-      <p>Atuamos em educação, saúde e capacitação profissional — conheça nossas ações e como se envolver.</p>
-      <p class="notice">Ajude-nos: cada contribuição faz a diferença. <a href="projetos.html">Veja projetos</a></p>
-    </section>
+  <section id="contato">
+    <h2>Contato</h2>
+    <form id="form-contato">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+      
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" required></textarea>
+      
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+  </section>
+</main>
 
-    <section aria-labelledby="about-title" class="card" style="margin-top:1rem">
-      <h2 id="about-title">Sobre a organização</h2>
-      <p>A ONG Exemplo foi fundada em 2010 e já beneficiou mais de 5.000 pessoas através de programas comunitários e parcerias locais.</p>
-      <div class="cards" role="list">
-        <article class="card" role="listitem">
-          <h3>Missão</h3>
-          <p class="small">Promover oportunidades e capacitação para comunidades em situação de vulnerabilidade.</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Visão</h3>
-          <p class="small">Ser referência em impacto social e transparência.</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Valores</h3>
-          <p class="small">Transparência, respeito e colaboração.</p>
-        </article>
-      </div>
-    </section>
+<footer>
+  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
+</footer>
 
-    <section aria-labelledby="contact-title" class="card" style="margin-top:1rem">
-      <h2 id="contact-title">Contato</h2>
-      <address>
-        <p>Rua das Flores, 123 — São Paulo, SP</p>
-        <p>Email: <a href="mailto:contato@ongexemplo.org">contato@ongexemplo.org</a></p>
-        <p>Telefone: (11) 99999-0000</p>
-      </address>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container">
-      <p class="small">© ONG Exemplo — Transparência e impacto social</p>
-    </div>
-  </footer>
+<script src="script.js"></script>
 </body>
 </html>
+
