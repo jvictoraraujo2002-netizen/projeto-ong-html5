@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - ONG Exemplo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="masks.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="img/logoong.jpg" alt="Logo ONG">
+  </div>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <ul>
+      <li><a href="01-index.html">Home</a></li>
+      <li>
+        <a href="#">Projetos</a>
+        <ul class="submenu">
+          <li><a href="02-educacao.html">Educação</a></li>
+          <li><a href="03-saude.html">Saúde</a></li>
+          <li><a href="04-meio-ambiente.html">Meio Ambiente</a></li>
+        </ul>
+      </li>
+      <li><a href="05-contato.html">Contato</a></li>
+      <li><a href="06-cadastro.html" class="active">Cadastro</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero-container">
+    <div class="hero-text">
+      <h1>Cadastre-se</h1>
+      <p>Participe de nossos projetos e faça a diferença na comunidade.</p>
+    </div>
+    <div class="hero-image">
+      <img src="img/cadastro.jpg" alt="Cadastro">
+    </div>
+  </section>
+
+  <section class="container projects-section">
+    <h2>Formulário de Cadastro</h2>
+    <form>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" class="telefone" placeholder="Telefone" required>
+      <input type="text" class="cpf" placeholder="CPF" required>
+      <textarea placeholder="Observações" rows="4"></textarea>
+      <button type="submit">Enviar Cadastro</button>
+      <div class="alert"></div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
 
