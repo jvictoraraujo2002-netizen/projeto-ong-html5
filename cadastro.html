@@ -1,49 +1,174 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG Exemplo - Cadastro</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto ONG - Cadastro</title>
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            --primary-color: #1E88E5;
+            --primary-light: #6AB7FF;
+            --primary-dark: #005CB2;
+            --secondary-color: #FFC107;
+            --secondary-light: #FFF350;
+            --secondary-dark: #C79100;
+            --neutral-light: #F5F5F5;
+            --neutral-medium: #BDBDBD;
+            --neutral-dark: #424242;
+            --success-color: #4CAF50;
+            --error-color: #F44336;
+            --warning-color: #FF9800;
+
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 20px;
+            --font-size-xl: 28px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+        }
+
+        /* ===== RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); font-size: var(--font-size-md); background-color: var(--neutral-light); color: var(--neutral-dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* ===== HEADER ===== */
+        header { background-color: var(--primary-color); color: #fff; padding: var(--space-16) var(--space-32); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: var(--font-size-xl); font-weight: bold; }
+        nav ul { display: flex; gap: var(--space-24); align-items: center; }
+        nav li { position: relative; }
+        nav li:hover > ul { display: block; }
+        nav ul ul { display: none; position: absolute; top: 100%; left: 0; background-color: var(--primary-dark); padding: var(--space-16); border-radius: 8px; }
+        nav ul ul li { margin: var(--space-8) 0; }
+        nav a { color: #fff; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary-color); }
+
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+        .hamburger div { width: 25px; height: 3px; background-color: #fff; }
+
+        @media(max-width: 768px){
+            nav ul { display: none; flex-direction: column; background-color: var(--primary-color); width: 100%; position: absolute; top: 70px; left: 0; padding: var(--space-16) 0; }
+            nav ul.show { display: flex; }
+            .hamburger { display: flex; }
+        }
+
+        /* ===== HERO ===== */
+        .hero { display: grid; place-items: center; text-align: center; padding: var(--space-64) var(--space-32); background: linear-gradient(135deg, var(--primary-light), var(--primary-color)); color: #fff; }
+        .hero h1 { font-size: var(--font-size-xl); margin-bottom: var(--space-16); }
+        .hero p { font-size: var(--font-size-lg); }
+
+        /* ===== FORMULÁRIO ===== */
+        .form-container { max-width: 600px; margin: var(--space-64) auto; background-color: #fff; padding: var(--space-32); border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        form { display: flex; flex-direction: column; gap: var(--space-16); }
+        label { font-weight: 600; font-size: var(--font-size-md); margin-bottom: var(--space-8); }
+        input, textarea { padding: var(--space-12); border: 1px solid var(--neutral-medium); border-radius: 8px; font-size: var(--font-size-md); width: 100%; transition: border 0.3s; }
+        input:focus, textarea:focus { border-color: var(--primary-color); outline: none; }
+        textarea { resize: vertical; min-height: 120px; }
+
+        .btn { display: inline-block; padding: var(--space-12) var(--space-24); border-radius: 8px; font-weight: 500; cursor: pointer; border: none; transition: background 0.3s; text-align: center; }
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-secondary { background-color: var(--secondary-color); color: #fff; }
+        .btn-secondary:hover { background-color: var(--secondary-dark); }
+
+        .alert { padding: var(--space-16); border-radius: 8px; margin-top: var(--space-16); color: #fff; display: none; }
+        .alert-success { background-color: var(--success-color); }
+        .alert-error { background-color: var(--error-color); }
+
+        /* ===== FOOTER ===== */
+        footer { background-color: var(--neutral-dark); color: #fff; padding: var(--space-32); text-align: center; }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">ONG Exemplo</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projetos.html">Projetos</a>
+                    <ul>
+                        <li><a href="#educacao">Projetos Educação</a></li>
+                        <li><a href="#cultura">Projetos Cultura</a></li>
+                        <li><a href="#meio-ambiente">Projetos Meio Ambiente</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header>
-    <h1>ONG Exemplo</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section class="hero">
+        <h1>Cadastre-se na ONG Exemplo</h1>
+        <p>Preencha o formulário abaixo para participar de nossos projetos e receber informações.</p>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Cadastro</h2>
-    <p>Cadastre-se e participe das nossas ações e projetos transformadores.</p>
-  </section>
+    <section class="form-container">
+        <form id="cadastroForm">
+            <div>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+            </div>
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+            </div>
+            <div>
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem ou interesse"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+            <div class="alert alert-success" id="successMsg">Cadastro enviado com sucesso!</div>
+            <div class="alert alert-error" id="errorMsg">Por favor, preencha todos os campos corretamente.</div>
+        </form>
+    </section>
 
-  <!-- FORMULÁRIO DE CADASTRO -->
-  <section>
-    <form>
-      <input type="text" placeholder="Nome Completo" required>
-      <input type="email" placeholder="E-mail" required>
-      <input type="tel" placeholder="Telefone" required>
-      <input type="text" placeholder="Cidade/Estado" required>
-      <textarea placeholder="Como deseja contribuir?" rows="4" required></textarea>
-      <button class="btn-primary" type="submit">Cadastrar</button>
-    </form>
-  </section>
+    <footer>
+        &copy; 2025 ONG Exemplo. Todos os direitos reservados.
+    </footer>
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 ONG Exemplo. Todos os direitos reservados.
-  </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        }
 
+        // Validação simples
+        const form = document.getElementById('cadastroForm');
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const successMsg = document.getElementById('successMsg');
+            const errorMsg = document.getElementById('errorMsg');
+
+            if(nome && email){
+                successMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+                form.reset();
+            } else {
+                successMsg.style.display = 'none';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
 
