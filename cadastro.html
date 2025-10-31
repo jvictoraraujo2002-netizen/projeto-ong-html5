@@ -85,6 +85,12 @@
         .alert-success { background-color: var(--success-color); }
         .alert-error { background-color: var(--error-color); }
 
+        /* ===== CONTATO ===== */
+        .contact-container { max-width: 800px; margin: var(--space-64) auto; background-color: #fff; padding: var(--space-32); border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .contact-container h2 { font-size: var(--font-size-xl); color: var(--primary-dark); margin-bottom: var(--space-24); }
+        .contact-item { margin-bottom: var(--space-16); font-size: var(--font-size-md); }
+        .contact-item strong { color: var(--primary-color); }
+
         /* ===== FOOTER ===== */
         footer { background-color: var(--neutral-dark); color: #fff; padding: var(--space-32); text-align: center; }
     </style>
@@ -139,6 +145,15 @@
             <div class="alert alert-success" id="successMsg">Cadastro enviado com sucesso!</div>
             <div class="alert alert-error" id="errorMsg">Por favor, preencha todos os campos corretamente.</div>
         </form>
+    </section>
+
+    <!-- ===== SEÇÃO DE CONTATO ===== -->
+    <section class="contact-container">
+        <h2>Contato</h2>
+        <div class="contact-item"><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro Centro, São Paulo, SP</div>
+        <div class="contact-item"><strong>Telefone:</strong> (11) 98765-4321</div>
+        <div class="contact-item"><strong>E-mail:</strong> contato@ongexemplo.org</div>
+        <div class="contact-item"><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 17h</div>
     </section>
 
     <footer>
