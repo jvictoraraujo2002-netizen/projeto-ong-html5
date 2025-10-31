@@ -7,7 +7,6 @@
     <style>
         /* ===== DESIGN SYSTEM ===== */
         :root {
-            /* Cores */
             --primary-color: #1E88E5;
             --primary-light: #6AB7FF;
             --primary-dark: #005CB2;
@@ -21,7 +20,6 @@
             --error-color: #F44336;
             --warning-color: #FF9800;
 
-            /* Tipografia */
             --font-size-xs: 12px;
             --font-size-sm: 14px;
             --font-size-md: 16px;
@@ -29,7 +27,6 @@
             --font-size-xl: 28px;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-            /* Espaçamento modular */
             --space-8: 8px;
             --space-16: 16px;
             --space-24: 24px;
@@ -39,232 +36,61 @@
         }
 
         /* ===== RESET ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            font-size: var(--font-size-md);
-            background-color: var(--neutral-light);
-            color: var(--neutral-dark);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); font-size: var(--font-size-md); background-color: var(--neutral-light); color: var(--neutral-dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
 
         /* ===== HEADER ===== */
-        header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: var(--space-16) var(--space-32);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: var(--font-size-xl);
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            gap: var(--space-24);
-            align-items: center;
-        }
-
-        nav li {
-            position: relative;
-        }
-
-        nav li:hover > ul {
-            display: block;
-        }
-
-        nav ul ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--primary-dark);
-            padding: var(--space-16);
-            border-radius: 8px;
-        }
-
-        nav ul ul li {
-            margin: var(--space-8) 0;
-        }
-
-        nav a {
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--secondary-color);
-        }
+        header { background-color: var(--primary-color); color: #fff; padding: var(--space-16) var(--space-32); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: var(--font-size-xl); font-weight: bold; }
+        nav ul { display: flex; gap: var(--space-24); align-items: center; }
+        nav li { position: relative; }
+        nav li:hover > ul { display: block; }
+        nav ul ul { display: none; position: absolute; top: 100%; left: 0; background-color: var(--primary-dark); padding: var(--space-16); border-radius: 8px; }
+        nav ul ul li { margin: var(--space-8) 0; }
+        nav a { color: #fff; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary-color); }
 
         /* ===== MENU HAMBURGER ===== */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-        }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+        .hamburger div { width: 25px; height: 3px; background-color: #fff; }
 
         @media(max-width: 768px){
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: var(--primary-color);
-                width: 100%;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                padding: var(--space-16) 0;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
+            nav ul { display: none; flex-direction: column; background-color: var(--primary-color); width: 100%; position: absolute; top: 70px; left: 0; padding: var(--space-16) 0; }
+            nav ul.show { display: flex; }
+            .hamburger { display: flex; }
         }
 
         /* ===== HERO ===== */
-        .hero {
-            display: grid;
-            place-items: center;
-            text-align: center;
-            padding: var(--space-64) var(--space-32);
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
-            color: #fff;
-        }
-
-        .hero h1 {
-            font-size: var(--font-size-xl);
-            margin-bottom: var(--space-16);
-        }
-
-        .hero p {
-            font-size: var(--font-size-lg);
-        }
-
-        .hero .btn {
-            margin-top: var(--space-32);
-            padding: var(--space-16) var(--space-32);
-            background-color: var(--secondary-color);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: var(--font-size-md);
-            transition: background 0.3s;
-        }
-
-        .hero .btn:hover {
-            background-color: var(--secondary-dark);
-            color: #fff;
-        }
+        .hero { display: grid; place-items: center; text-align: center; padding: var(--space-64) var(--space-32); background: linear-gradient(135deg, var(--primary-light), var(--primary-color)); color: #fff; }
+        .hero h1 { font-size: var(--font-size-xl); margin-bottom: var(--space-16); }
+        .hero p { font-size: var(--font-size-lg); }
+        .hero .btn { margin-top: var(--space-32); padding: var(--space-16) var(--space-32); background-color: var(--secondary-color); border: none; border-radius: 8px; cursor: pointer; font-size: var(--font-size-md); transition: background 0.3s; }
+        .hero .btn:hover { background-color: var(--secondary-dark); color: #fff; }
 
         /* ===== CARDS ===== */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-32);
-            padding: var(--space-64) var(--space-32);
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: var(--space-16);
-        }
-
-        .card-body h3 {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--space-8);
-        }
-
-        .card-body p {
-            font-size: var(--font-size-sm);
-            color: var(--neutral-dark);
-        }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-32); padding: var(--space-64) var(--space-32); }
+        .card { background-color: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-body { padding: var(--space-16); }
+        .card-body h3 { font-size: var(--font-size-lg); margin-bottom: var(--space-8); }
+        .card-body p { font-size: var(--font-size-sm); color: var(--neutral-dark); }
 
         /* ===== FOOTER ===== */
-        footer {
-            background-color: var(--neutral-dark);
-            color: #fff;
-            padding: var(--space-32);
-            text-align: center;
-        }
+        footer { background-color: var(--neutral-dark); color: #fff; padding: var(--space-32); text-align: center; }
 
         /* ===== BOTÕES ===== */
-        .btn {
-            display: inline-block;
-            padding: var(--space-8) var(--space-16);
-            border-radius: 8px;
-            font-weight: 500;
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s;
-        }
-
+        .btn { display: inline-block; padding: var(--space-8) var(--space-16); border-radius: 8px; font-weight: 500; cursor: pointer; border: none; transition: background 0.3s; }
         .btn-primary { background-color: var(--primary-color); color: #fff; }
         .btn-primary:hover { background-color: var(--primary-dark); }
         .btn-secondary { background-color: var(--secondary-color); color: #fff; }
         .btn-secondary:hover { background-color: var(--secondary-dark); }
 
         /* ===== ALERTS ===== */
-        .alert {
-            padding: var(--space-16);
-            border-radius: 8px;
-            margin: var(--space-16) 0;
-            color: #fff;
-        }
-
+        .alert { padding: var(--space-16); border-radius: 8px; margin: var(--space-16) 0; color: #fff; }
         .alert-success { background-color: var(--success-color); }
         .alert-error { background-color: var(--error-color); }
         .alert-warning { background-color: var(--warning-color); }
@@ -281,10 +107,11 @@
             </div>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a>
+                <li><a href="projetos.html">Projetos</a>
                     <ul>
-                        <li><a href="#missao">Missão</a></li>
-                        <li><a href="#valores">Valores</a></li>
+                        <li><a href="#educacao">Projetos Educação</a></li>
+                        <li><a href="#cultura">Projetos Cultura</a></li>
+                        <li><a href="#meio-ambiente">Projetos Meio Ambiente</a></li>
                     </ul>
                 </li>
                 <li><a href="cadastro.html">Cadastro</a></li>
@@ -300,24 +127,24 @@
 
     <section class="cards">
         <div class="card">
-            <img src="https://via.placeholder.com/400x180" alt="Projeto 1">
+            <img src="https://via.placeholder.com/400x180" alt="Projeto Educação">
             <div class="card-body">
-                <h3>Projeto Social 1</h3>
-                <p>Descrição curta do projeto social, seus objetivos e impacto.</p>
+                <h3>Educação</h3>
+                <p>Oferecemos cursos, oficinas e reforço escolar para crianças e jovens, promovendo aprendizado e oportunidades.</p>
             </div>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/400x180" alt="Projeto 2">
+            <img src="https://via.placeholder.com/400x180" alt="Projeto Cultura">
             <div class="card-body">
-                <h3>Projeto Social 2</h3>
-                <p>Descrição curta do projeto social, seus objetivos e impacto.</p>
+                <h3>Cultura</h3>
+                <p>Incentivamos atividades culturais como música, teatro e dança, valorizando talentos locais e integração comunitária.</p>
             </div>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/400x180" alt="Projeto 3">
+            <img src="https://via.placeholder.com/400x180" alt="Projeto Meio Ambiente">
             <div class="card-body">
-                <h3>Projeto Social 3</h3>
-                <p>Descrição curta do projeto social, seus objetivos e impacto.</p>
+                <h3>Meio Ambiente</h3>
+                <p>Realizamos ações de preservação, conscientização ambiental e plantio de árvores para um futuro mais sustentável.</p>
             </div>
         </div>
     </section>
