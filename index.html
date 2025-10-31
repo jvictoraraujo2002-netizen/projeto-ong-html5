@@ -1,71 +1,335 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG Exemplo - Início</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto ONG - Home</title>
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            /* Cores */
+            --primary-color: #1E88E5;
+            --primary-light: #6AB7FF;
+            --primary-dark: #005CB2;
+            --secondary-color: #FFC107;
+            --secondary-light: #FFF350;
+            --secondary-dark: #C79100;
+            --neutral-light: #F5F5F5;
+            --neutral-medium: #BDBDBD;
+            --neutral-dark: #424242;
+            --success-color: #4CAF50;
+            --error-color: #F44336;
+            --warning-color: #FF9800;
+
+            /* Tipografia */
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 20px;
+            --font-size-xl: 28px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            /* Espaçamento modular */
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-md);
+            background-color: var(--neutral-light);
+            color: var(--neutral-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: var(--space-16) var(--space-32);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--space-24);
+            align-items: center;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav li:hover > ul {
+            display: block;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-dark);
+            padding: var(--space-16);
+            border-radius: 8px;
+        }
+
+        nav ul ul li {
+            margin: var(--space-8) 0;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* ===== MENU HAMBURGER ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        @media(max-width: 768px){
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: var(--space-16) 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: var(--space-64) var(--space-32);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-16);
+        }
+
+        .hero p {
+            font-size: var(--font-size-lg);
+        }
+
+        .hero .btn {
+            margin-top: var(--space-32);
+            padding: var(--space-16) var(--space-32);
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: var(--font-size-md);
+            transition: background 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: var(--secondary-dark);
+            color: #fff;
+        }
+
+        /* ===== CARDS ===== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-32);
+            padding: var(--space-64) var(--space-32);
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: var(--space-16);
+        }
+
+        .card-body h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-8);
+        }
+
+        .card-body p {
+            font-size: var(--font-size-sm);
+            color: var(--neutral-dark);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--neutral-dark);
+            color: #fff;
+            padding: var(--space-32);
+            text-align: center;
+        }
+
+        /* ===== BOTÕES ===== */
+        .btn {
+            display: inline-block;
+            padding: var(--space-8) var(--space-16);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-secondary { background-color: var(--secondary-color); color: #fff; }
+        .btn-secondary:hover { background-color: var(--secondary-dark); }
+
+        /* ===== ALERTS ===== */
+        .alert {
+            padding: var(--space-16);
+            border-radius: 8px;
+            margin: var(--space-16) 0;
+            color: #fff;
+        }
+
+        .alert-success { background-color: var(--success-color); }
+        .alert-error { background-color: var(--error-color); }
+        .alert-warning { background-color: var(--warning-color); }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">ONG Exemplo</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a>
+                    <ul>
+                        <li><a href="#missao">Missão</a></li>
+                        <li><a href="#valores">Valores</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header>
-    <h1>ONG Exemplo</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section class="hero">
+        <h1>Bem-vindo à ONG Exemplo</h1>
+        <p>Transformando vidas com projetos sociais de impacto.</p>
+        <button class="btn btn-secondary">Saiba Mais</button>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Transformando Vidas</h2>
-    <p>Nossa ONG promove educação, saúde e inclusão social para comunidades em situação de vulnerabilidade.</p>
-    <button class="btn-primary" onclick="window.location.href='projetos.html'">Conheça Nossos Projetos</button>
-  </section>
+    <section class="cards">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x180" alt="Projeto 1">
+            <div class="card-body">
+                <h3>Projeto Social 1</h3>
+                <p>Descrição curta do projeto social, seus objetivos e impacto.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x180" alt="Projeto 2">
+            <div class="card-body">
+                <h3>Projeto Social 2</h3>
+                <p>Descrição curta do projeto social, seus objetivos e impacto.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x180" alt="Projeto 3">
+            <div class="card-body">
+                <h3>Projeto Social 3</h3>
+                <p>Descrição curta do projeto social, seus objetivos e impacto.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- FRASE INSTITUCIONAL -->
-  <section class="section-institutional">
-    Atuamos para transformar comunidades, promovendo educação, saúde e inclusão digital. Nosso foco é gerar impacto positivo e sustentável.
-  </section>
+    <footer>
+        &copy; 2025 ONG Exemplo. Todos os direitos reservados.
+    </footer>
 
-  <!-- DESTAQUES / CARDS -->
-  <section class="cards">
-    <div class="card">
-      <h3>Educação para Todos</h3>
-      <p>Oferecemos aulas e oficinas gratuitas para jovens e adultos em situação de vulnerabilidade.</p>
-    </div>
-    <div class="card">
-      <h3>Saúde na Comunidade</h3>
-      <p>Ações de prevenção, orientação e cuidados básicos de saúde com profissionais voluntários.</p>
-    </div>
-    <div class="card">
-      <h3>Inclusão Digital</h3>
-      <p>Capacitação em informática e tecnologias digitais para promover autonomia e empregabilidade.</p>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato">
-    <h2 class="section-title">Fale Conosco</h2>
-    <form>
-      <input type="text" placeholder="Nome" required>
-      <input type="email" placeholder="E-mail" required>
-      <textarea placeholder="Mensagem" rows="5" required></textarea>
-      <button class="btn-primary" type="submit">Enviar</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 ONG Exemplo. Todos os direitos reservados.
-  </footer>
-
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
-
-
