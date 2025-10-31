@@ -1,209 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ONG Exemplo</title>
-<link rel="stylesheet" href="style.css">
-<style>
-  body { scroll-behavior: smooth; }
-  
-  /* HERO MODERNO */
-  .hero { 
-    display:flex; flex-direction:column; justify-content:center; align-items:center; 
-    text-align:center; padding:80px 20px; 
-    background: linear-gradient(135deg, #0f7c9b, #5fb0ce); 
-    color:#0f1724; /* COR MAIS VISÍVEL */
-    border-radius:12px; 
-  }
-  .hero .headline { font-size:3rem; font-weight:900; margin-bottom:16px; line-height:1.1; color:#0f1724; }
-  .hero .sub { font-size:1.2rem; max-width:600px; margin-bottom:24px; color:#0f1724; }
-  .btn { border-radius:50px; padding:12px 28px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; transition:0.3s ease; }
-  .btn:hover { transform:translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-  .btn.primary { background: linear-gradient(90deg, #0f7c9b, #5fb0ce); color:#fff; }
-  .btn.secondary { background: linear-gradient(90deg, #9b59b6, #b07bd3); color:#fff; }
-
-  /* Cards modernos */
-  .cards-grid { display:grid; grid-template-columns:1fr; gap:24px; margin-top:32px; }
-  @media(min-width:640px){ .cards-grid { grid-template-columns:repeat(2,1fr); } }
-  @media(min-width:1024px){ .cards-grid { grid-template-columns:repeat(3,1fr); } }
-  .card { background:#fff; border-radius:16px; padding:24px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .card:hover { transform:translateY(-10px); box-shadow:0 16px 40px rgba(0,0,0,0.15); }
-  .card .meta { font-size:0.8rem; text-transform:uppercase; color:#8b98a6; margin-bottom:8px; letter-spacing:0.05em; }
-  .card .title { font-size:1.2rem; font-weight:700; margin-bottom:12px; color:#0f1724; }
-  .card .desc { font-size:1rem; color:#334155; line-height:1.4; }
-
-  /* Seções */
-  section { padding:80px 20px; }
-  section:nth-child(even) { background:#f6f8fa; border-radius:12px; margin:16px 0; }
-
-  /* Formulário moderno */
-  .form-field input, .form-field textarea, .form-field select { border-radius:12px; border:1px solid #e6eef3; padding:14px; font-size:1rem; transition:0.3s ease; width:100%; }
-  .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color:#0f7c9b; box-shadow:0 8px 20px rgba(15,124,155,0.1); }
-  .form-field label { font-weight:600; margin-bottom:4px; display:block; }
-
-  /* Footer */
-  footer { background:#0f1724; color:#fff; padding:60px 20px; border-radius:12px; }
-  footer h3 { margin-bottom:12px; font-weight:700; }
-  footer a { color:#5fb0ce; text-decoration:none; display:block; margin-bottom:4px; }
-  footer a:hover { color:#0f7c9b; }
-
-  /* Placeholder modernizado */
-  .placeholder { background:#e6eef3; color:#334155; height:180px; display:flex; align-items:center; justify-content:center; font-weight:700; border-radius:12px; font-size:1.1rem; }
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONG Exemplo</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<header class="header">
-  <div class="container flex space-between">
-    <div class="brand"><div class="logo">ONG Exemplo</div></div>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-      <a href="#cadastro">Cadastro</a>
+  <!-- ======= CABEÇALHO ======= -->
+  <header>
+    <h1>ONG Exemplo</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
     </nav>
-    <div class="hamburger" id="hamburger">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </div>
-  <div class="mobile-nav is-closed" id="mobileNav">
-    <div class="panel flex-col">
-      <a href="#home">Home</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-      <a href="#cadastro">Cadastro</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<section class="hero container" id="home">
-  <div class="headline">Transformando Vidas</div>
-  <div class="sub">Nossa ONG promove educação, saúde e inclusão social para comunidades em situação de vulnerabilidade.</div>
-  <div class="mt-2">
-    <a href="index.html#projetos" target="_blank" class="btn primary">Projetos</a>
-    <a href="index.html#contato" target="_blank" class="btn secondary">Contato</a>
-  </div>
-</section>
+  <!-- ======= HERO ======= -->
+  <section class="hero">
+    <h2>Transformando Vidas</h2>
+    <p>
+      Nossa ONG promove educação, saúde e inclusão social para comunidades em situação de vulnerabilidade.
+    </p>
+    <button class="btn-primary" onclick="window.location.href='projetos.html'">Conheça Nossos Projetos</button>
+  </section>
 
-<section class="container mt-6">
-  <p class="sub" style="text-align:center; font-size:1.2rem;">Atuamos para transformar comunidades, promovendo educação, saúde e inclusão digital. Nosso foco é gerar impacto positivo e sustentável.</p>
-</section>
+  <!-- ======= FRASE INSTITUCIONAL ======= -->
+  <section>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--color-neutral-800);">
+      Atuamos para transformar comunidades, promovendo educação, saúde e inclusão digital. Nosso foco é gerar impacto positivo e sustentável.
+    </p>
+  </section>
 
-<section id="projetos" class="container">
-  <h2 class="headline">Projetos</h2>
-  <div class="cards-grid">
-    <div class="card">
-      <div class="meta">Educação</div>
-      <div class="title">Alfabetização</div>
-      <div class="desc">Aulas de alfabetização para crianças e adultos de comunidades carentes.</div>
+  <!-- ======= SEÇÃO DE PROJETOS ======= -->
+  <section id="projetos">
+    <h2 class="section-title">Nossos Projetos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Educação para Todos</h3>
+        <p>Projeto que oferece aulas e oficinas gratuitas para jovens e adultos em situação de vulnerabilidade.</p>
+      </div>
+      <div class="card">
+        <h3>Saúde na Comunidade</h3>
+        <p>Ações de prevenção, orientação e cuidados básicos de saúde em parceria com profissionais voluntários.</p>
+      </div>
+      <div class="card">
+        <h3>Inclusão Digital</h3>
+        <p>Capacitação em informática e tecnologias digitais para promover autonomia e empregabilidade.</p>
+      </div>
     </div>
-    <div class="card">
-      <div class="meta">Saúde</div>
-      <div class="title">Campanha de Vacinação</div>
-      <div class="desc">Levamos imunização e cuidados médicos a comunidades vulneráveis.</div>
-    </div>
-    <div class="card">
-      <div class="meta">Inclusão</div>
-      <div class="title">Oficinas de TI</div>
-      <div class="desc">Capacitação tecnológica para jovens em risco social.</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="contato" class="container">
-  <h2 class="headline">Contato</h2>
-  <form class="mt-3">
-    <div class="form-field">
+  <!-- ======= SEÇÃO DE CONTATO ======= -->
+  <section id="contato">
+    <h2 class="section-title">Fale Conosco</h2>
+    <form action="#" method="post">
       <label for="nome">Nome</label>
-      <input type="text" id="nome" placeholder="Seu nome" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Seu email" required>
-    </div>
-    <div class="form-field mt-2">
+      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
       <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" placeholder="Escreva sua mensagem" required></textarea>
-    </div>
-    <div class="mt-2">
-      <button type="submit" class="btn primary">Enviar</button>
-    </div>
-  </form>
-</section>
+      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem..." required></textarea>
 
-<section id="cadastro" class="container mt-6">
-  <h2 class="headline">Cadastro</h2>
-  <form class="mt-3">
-    <div class="form-field">
-      <label for="fullName">Nome Completo</label>
-      <input type="text" id="fullName" placeholder="Nome completo" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="emailCad">Email</label>
-      <input type="email" id="emailCad" placeholder="Email" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="telefone">Telefone</label>
-      <input type="tel" id="telefone" placeholder="(XX) XXXXX-XXXX" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="endereco">Endereço</label>
-      <input type="text" id="endereco" placeholder="Endereço completo" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="dataNascimento">Data de Nascimento</label>
-      <input type="date" id="dataNascimento" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Senha" required>
-    </div>
-    <div class="form-field mt-2">
-      <label for="confirmaSenha">Confirmar Senha</label>
-      <input type="password" id="confirmaSenha" placeholder="Confirme a senha" required>
-    </div>
-    <div class="form-field mt-2">
-      <input type="checkbox" id="termos" required>
-      <label for="termos">Aceito os termos de uso e política de privacidade</label>
-    </div>
-    <div class="mt-2">
-      <button type="submit" class="btn primary">Cadastrar</button>
-    </div>
-  </form>
-</section>
+      <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+  </section>
 
-<footer class="footer">
-  <div class="container columns">
-    <div>
-      <h3>ONG Exemplo</h3>
-      <p>Conectando pessoas e comunidades para um futuro melhor.</p>
-    </div>
-    <div>
-      <h3>Links</h3>
-      <a href="#home">Home</a>
-      <a href="#projetos.html">Projetos</a>
-      <a href="#contato">Contato</a>
-      <a href="#cadastro.html">Cadastro</a>
-    </div>
-    <div>
-      <h3>Contato</h3>
-      <p>Email: contato@ong.com</p>
-      <p>Telefone: (11) 99999-9999</p>
-    </div>
-  </div>
-</footer>
+  <!-- ======= RODAPÉ ======= -->
+  <footer>
+    <p>&copy; 2025 ONG Exemplo. Todos os direitos reservados.</p>
+  </footer>
 
-<script>
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('is-closed');
-  mobileNav.classList.toggle('is-open');
-});
-</script>
 </body>
 </html>
