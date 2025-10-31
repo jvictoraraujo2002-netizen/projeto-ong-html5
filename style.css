@@ -1,31 +1,29 @@
-/* ===========================
-   DESIGN SYSTEM - ONG Exemplo
-   =========================== */
-
-/* ======= VARIÁVEIS ======= */
+/* ===================== DESIGN SYSTEM ===================== */
 :root {
-  /* Cores principais */
-  --color-primary: #004b6b; /* Azul petróleo institucional */
-  --color-secondary: #00a6a6; /* Verde água moderno */
-  --color-accent: #00798c;
-  --color-neutral-100: #ffffff;
-  --color-neutral-200: #f5f7fa;
-  --color-neutral-400: #c9ced6;
-  --color-neutral-600: #5a5a5a;
-  --color-neutral-800: #2a2a2a;
+  /* --- CORES --- */
+  --color-primary: #0d3b66;
+  --color-primary-light: #1d5f91;
+  --color-secondary: #f4d35e;
+  --color-secondary-dark: #e6c84c;
+  --color-success: #2a9d8f;
+  --color-warning: #f4a261;
+  --color-danger: #e76f51;
+  --color-surface: #ffffff;
+  --color-muted-light: #f6f7f8;
+  --color-muted: #e1e5ea;
+  --color-muted-dark: #8b98a6;
+  --color-text: #0f1724;
+  --color-text-secondary: #334155;
 
-  /* Tipografia */
-  --font-main: 'Poppins', 'Inter', sans-serif;
+  /* --- TIPOGRAFIA --- */
+  --font-base: 'Poppins', sans-serif;
+  --fs-xxl: 36px;
+  --fs-xl: 28px;
+  --fs-lg: 20px;
+  --fs-md: 16px;
+  --fs-sm: 14px;
 
-  /* Escala tipográfica */
-  --fs-xxl: 3rem;
-  --fs-xl: 2.5rem;
-  --fs-lg: 1.75rem;
-  --fs-md: 1.125rem;
-  --fs-sm: 0.95rem;
-  --fs-xs: 0.85rem;
-
-  /* Espaçamento (sistema modular 8px) */
+  /* --- ESPAÇAMENTO --- */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -33,239 +31,111 @@
   --space-5: 48px;
   --space-6: 64px;
 
-  /* Outros */
-  --transition-fast: 0.3s ease;
-  --radius: 12px;
-  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+  /* --- BORDAS E SOMBRAS --- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.1);
+
+  /* --- TRANSIÇÕES --- */
+  --transition: all 0.3s ease;
 }
 
-/* ======= RESET ======= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===================== RESET ===================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-base); font-size: var(--fs-md); color: var(--color-text); background-color: var(--color-muted-light); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-body {
-  font-family: var(--font-main);
-  color: var(--color-neutral-800);
-  background-color: var(--color-neutral-100);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+/* ===================== CONTAINER ===================== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-3); }
 
-/* ======= CABEÇALHO ======= */
+/* ===================== HEADER ===================== */
 header {
-  background-color: var(--color-primary);
-  color: var(--color-neutral-100);
-  padding: var(--space-2) var(--space-4);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: var(--color-surface);
+  padding: var(--space-3) 0;
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
-  z-index: 10;
-  box-shadow: var(--shadow-soft);
+  z-index: 100;
 }
+header h1 { font-size: var(--fs-xl); color: var(--color-primary); margin-left: var(--space-3); display: inline-block; }
+header nav { display: inline-block; float: right; margin-right: var(--space-3); }
+header nav ul { display: flex; gap: var(--space-4); }
+header nav ul li a { font-weight: 600; padding: 8px 12px; border-radius: var(--radius-sm); transition: var(--transition); }
+header nav ul li a:hover { background: var(--color-muted); color: var(--color-primary); }
 
-header h1 {
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: var(--space-3);
-}
-
-nav a {
-  color: var(--color-neutral-100);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition-fast);
-}
-
-nav a:hover {
-  color: var(--color-secondary);
-}
-
-/* ======= HERO ======= */
+/* ===================== HERO ===================== */
 .hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #004b6b, #00a6a6);
-  color: #ffffff;
+  padding: var(--space-6) var(--space-3);
 }
+.hero h2 { font-size: var(--fs-xxl); margin-bottom: var(--space-3); }
+.hero p { font-size: var(--fs-lg); margin-bottom: var(--space-4); max-width: 700px; margin-left: auto; margin-right: auto; }
+.hero .btn-primary { background: var(--color-secondary); color: #000; padding: 12px 24px; font-weight: 700; border-radius: var(--radius-md); transition: var(--transition); }
+.hero .btn-primary:hover { background: var(--color-secondary-dark); transform: translateY(-3px); }
 
-.hero h2 {
-  font-size: var(--fs-xxl);
-  font-weight: 700;
-  margin-bottom: var(--space-2);
-}
-
-.hero p {
-  font-size: var(--fs-lg);
-  max-width: 700px;
-  margin: 0 auto var(--space-4);
-}
-
-/* ======= BOTÕES ======= */
-.btn-primary {
-  background-color: var(--color-secondary);
-  color: var(--color-neutral-100);
-  border: none;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-size: var(--fs-md);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* ======= SEÇÕES ======= */
-section {
+/* ===================== SEÇÕES ===================== */
+.section-institutional {
+  background: var(--color-muted-light);
+  text-align: center;
   padding: var(--space-5) var(--space-3);
-}
-
-section:nth-of-type(even) {
-  background-color: var(--color-neutral-200);
-}
-
-.section-title {
-  text-align: center;
-  color: var(--color-primary);
   font-size: var(--fs-lg);
-  margin-bottom: var(--space-4);
+  color: var(--color-text);
 }
 
-/* ======= CARDS ======= */
+/* ===================== CARDS ===================== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
 }
-
 .card {
-  background-color: var(--color-neutral-100);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  background: var(--color-surface);
   padding: var(--space-3);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
 }
+.card h3 { font-size: var(--fs-lg); margin-bottom: var(--space-2); color: var(--color-primary); }
+.card p { color: var(--color-text-secondary); }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.card h3 {
-  color: var(--color-primary);
-  margin-bottom: var(--space-2);
-  font-size: var(--fs-md);
-}
-
-.card p {
-  color: var(--color-neutral-600);
-  font-size: var(--fs-sm);
-}
-
-/* ======= FORMULÁRIOS ======= */
+/* ===================== FORMULÁRIOS ===================== */
 form {
   max-width: 600px;
   margin: 0 auto;
-  background: var(--color-neutral-100);
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
 }
+input, textarea { padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--color-muted); font-size: var(--fs-md); width: 100%; }
+input:focus, textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(13,59,102,0.2); }
+button.btn-primary { border: none; cursor: pointer; }
 
-form label {
-  display: block;
-  font-weight: 500;
-  color: var(--color-primary);
-  margin-bottom: var(--space-1);
-}
+/* ===================== BOTÕES ===================== */
+button { font-family: var(--font-base); }
+button:hover { cursor: pointer; }
 
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: var(--space-2);
-  margin-bottom: var(--space-3);
-  border: 1px solid var(--color-neutral-400);
-  border-radius: var(--radius);
-  font-family: var(--font-main);
-}
-
-form input:focus,
-form textarea:focus {
-  outline: none;
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 0 2px rgba(0, 166, 166, 0.2);
-}
-
-/* ======= RODAPÉ ======= */
+/* ===================== FOOTER ===================== */
 footer {
-  background-color: var(--color-primary);
-  color: var(--color-neutral-100);
+  background: var(--color-surface);
   text-align: center;
   padding: var(--space-3);
-  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-sm);
 }
 
-/* ======= RESPONSIVIDADE ======= */
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+/* ===================== RESPONSIVO ===================== */
+@media(max-width:768px) {
+  header nav ul { flex-direction: column; text-align: center; margin-top: var(--space-2); }
+  .hero h2 { font-size: var(--fs-xl); }
+  .hero p { font-size: var(--fs-md); }
 }
 
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: var(--fs-xl);
-  }
-
-  .hero p {
-    font-size: var(--fs-md);
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: var(--fs-md);
-  }
-
-  nav ul {
-    gap: var(--space-2);
-  }
-
-  .btn-primary {
-    width: 100%;
-  }
-}
 
 
