@@ -18,6 +18,7 @@
   --font-main: 'Poppins', 'Inter', sans-serif;
 
   /* Escala tipográfica */
+  --fs-xxl: 3rem;
   --fs-xl: 2.5rem;
   --fs-lg: 1.75rem;
   --fs-md: 1.125rem;
@@ -35,7 +36,7 @@
   /* Outros */
   --transition-fast: 0.3s ease;
   --radius: 12px;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* ======= RESET ======= */
@@ -90,44 +91,58 @@ nav a:hover {
   color: var(--color-secondary);
 }
 
-/* ======= SEÇÃO HERO ======= */
+/* ======= HERO ======= */
 .hero {
-  background: var(--color-neutral-200);
   text-align: center;
-  padding: var(--space-6) var(--space-2);
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #004b6b, #00a6a6);
+  color: #ffffff;
 }
 
 .hero h2 {
-  color: var(--color-primary);
-  font-size: var(--fs-xl);
-  margin-bottom: var(--space-3);
+  font-size: var(--fs-xxl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
 }
 
 .hero p {
-  color: var(--color-neutral-800);
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   max-width: 700px;
   margin: 0 auto var(--space-4);
 }
 
+/* ======= BOTÕES ======= */
 .btn-primary {
   background-color: var(--color-secondary);
   color: var(--color-neutral-100);
   border: none;
-  padding: var(--space-2) var(--space-4);
+  padding: 14px 28px;
   border-radius: var(--radius);
+  font-size: var(--fs-md);
+  font-weight: 600;
   cursor: pointer;
-  font-size: var(--fs-sm);
-  transition: var(--transition-fast);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* ======= SEÇÕES ======= */
 section {
   padding: var(--space-5) var(--space-3);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--color-neutral-200);
 }
 
 .section-title {
@@ -153,8 +168,8 @@ section {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
@@ -203,14 +218,13 @@ form textarea:focus {
   box-shadow: 0 0 0 2px rgba(0, 166, 166, 0.2);
 }
 
-/* ======= FOOTER ======= */
+/* ======= RODAPÉ ======= */
 footer {
   background-color: var(--color-primary);
   color: var(--color-neutral-100);
   text-align: center;
   padding: var(--space-3);
   font-size: var(--fs-sm);
-  margin-top: var(--space-5);
 }
 
 /* ======= RESPONSIVIDADE ======= */
@@ -228,11 +242,11 @@ footer {
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 2rem;
+    font-size: var(--fs-xl);
   }
 
   .hero p {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-md);
   }
 
   .cards {
@@ -253,4 +267,5 @@ footer {
     width: 100%;
   }
 }
+
 
