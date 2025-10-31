@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ONG Exemplo</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG Exemplo - Início</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- ======= CABEÇALHO ======= -->
+  <!-- HEADER -->
   <header>
     <h1>ONG Exemplo</h1>
     <nav>
@@ -17,55 +16,56 @@
         <li><a href="index.html">Início</a></li>
         <li><a href="projetos.html">Projetos</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ======= HERO ======= -->
+  <!-- HERO -->
   <section class="hero">
     <h2>Transformando Vidas</h2>
-    <p>
-      Nossa ONG promove educação, saúde e inclusão social para comunidades em situação de vulnerabilidade.
-    </p>
-    <button class="btn-primary" onclick="window.location.href='projetos.html'">
-      Conheça Nossos Projetos
-    </button>
+    <p>Nossa ONG promove educação, saúde e inclusão social para comunidades em situação de vulnerabilidade.</p>
+    <button class="btn-primary" onclick="window.location.href='projetos.html'">Conheça Nossos Projetos</button>
   </section>
 
-  <!-- ======= FRASE INSTITUCIONAL ======= -->
+  <!-- FRASE INSTITUCIONAL -->
   <section class="section-institutional">
-    <p>
-      Atuamos para transformar comunidades, promovendo educação, saúde e inclusão digital. Nosso foco é gerar impacto positivo e sustentável.
-    </p>
+    Atuamos para transformar comunidades, promovendo educação, saúde e inclusão digital. Nosso foco é gerar impacto positivo e sustentável.
   </section>
 
-  <!-- ======= SEÇÃO DE DESTAQUES ======= -->
-  <section>
-    <h2 class="section-title">Nossos Destaques</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Educação para Todos</h3>
-        <p>Oferecemos aulas e oficinas gratuitas para jovens e adultos em situação de vulnerabilidade.</p>
-      </div>
-      <div class="card">
-        <h3>Saúde na Comunidade</h3>
-        <p>Ações de prevenção, orientação e cuidados básicos de saúde com profissionais voluntários.</p>
-      </div>
-      <div class="card">
-        <h3>Inclusão Digital</h3>
-        <p>Capacitação em informática e tecnologias digitais para promover autonomia e empregabilidade.</p>
-      </div>
+  <!-- DESTAQUES / CARDS -->
+  <section class="cards">
+    <div class="card">
+      <h3>Educação para Todos</h3>
+      <p>Oferecemos aulas e oficinas gratuitas para jovens e adultos em situação de vulnerabilidade.</p>
+    </div>
+    <div class="card">
+      <h3>Saúde na Comunidade</h3>
+      <p>Ações de prevenção, orientação e cuidados básicos de saúde com profissionais voluntários.</p>
+    </div>
+    <div class="card">
+      <h3>Inclusão Digital</h3>
+      <p>Capacitação em informática e tecnologias digitais para promover autonomia e empregabilidade.</p>
     </div>
   </section>
 
-  <!-- ======= CONTATO ======= -->
+  <!-- CONTATO -->
   <section id="contato">
     <h2 class="section-title">Fale Conosco</h2>
-    <form action="#" method="post">
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="email" placeholder="E-mail" required>
+      <textarea placeholder="Mensagem" rows="5" required></textarea>
+      <button class="btn-primary" type="submit">Enviar</button>
+    </form>
+  </section>
 
-      <label for="email">E-mail</label>
-      <inp
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 ONG Exemplo. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
+
 
