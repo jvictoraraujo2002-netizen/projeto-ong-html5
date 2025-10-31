@@ -1,66 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG Exemplo - Projetos</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto ONG - Projetos</title>
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            --primary-color: #1E88E5;
+            --primary-light: #6AB7FF;
+            --primary-dark: #005CB2;
+            --secondary-color: #FFC107;
+            --secondary-light: #FFF350;
+            --secondary-dark: #C79100;
+            --neutral-light: #F5F5F5;
+            --neutral-medium: #BDBDBD;
+            --neutral-dark: #424242;
+            --success-color: #4CAF50;
+            --error-color: #F44336;
+            --warning-color: #FF9800;
+
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 20px;
+            --font-size-xl: 28px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+        }
+
+        /* ===== RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); font-size: var(--font-size-md); background-color: var(--neutral-light); color: var(--neutral-dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; border-radius: 8px; }
+
+        /* ===== HEADER ===== */
+        header { background-color: var(--primary-color); color: #fff; padding: var(--space-16) var(--space-32); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: var(--font-size-xl); font-weight: bold; }
+        nav ul { display: flex; gap: var(--space-24); align-items: center; }
+        nav li { position: relative; }
+        nav li:hover > ul { display: block; }
+        nav ul ul { display: none; position: absolute; top: 100%; left: 0; background-color: var(--primary-dark); padding: var(--space-16); border-radius: 8px; }
+        nav ul ul li { margin: var(--space-8) 0; }
+        nav a { color: #fff; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary-color); }
+
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+        .hamburger div { width: 25px; height: 3px; background-color: #fff; }
+
+        @media(max-width: 768px){
+            nav ul { display: none; flex-direction: column; background-color: var(--primary-color); width: 100%; position: absolute; top: 70px; left: 0; padding: var(--space-16) 0; }
+            nav ul.show { display: flex; }
+            .hamburger { display: flex; }
+        }
+
+        /* ===== HERO ===== */
+        .hero { display: grid; place-items: center; text-align: center; padding: var(--space-64) var(--space-32); background: linear-gradient(135deg, var(--primary-light), var(--primary-color)); color: #fff; }
+        .hero h1 { font-size: var(--font-size-xl); margin-bottom: var(--space-16); }
+        .hero p { font-size: var(--font-size-lg); }
+
+        /* ===== SEÇÕES DE PROJETOS ===== */
+        section.project { padding: var(--space-64) var(--space-32); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-32); align-items: center; }
+        section.project:nth-child(even) { background-color: var(--neutral-light); }
+        .project img { width: 100%; height: 250px; object-fit: cover; }
+        .project-content h2 { font-size: var(--font-size-xl); margin-bottom: var(--space-16); color: var(--primary-dark); }
+        .project-content p { font-size: var(--font-size-md); margin-bottom: var(--space-16); }
+
+        /* ===== BOTÕES ===== */
+        .btn { display: inline-block; padding: var(--space-8) var(--space-16); border-radius: 8px; font-weight: 500; cursor: pointer; border: none; transition: background 0.3s; }
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-secondary { background-color: var(--secondary-color); color: #fff; }
+        .btn-secondary:hover { background-color: var(--secondary-dark); }
+
+        /* ===== FOOTER ===== */
+        footer { background-color: var(--neutral-dark); color: #fff; padding: var(--space-32); text-align: center; }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">ONG Exemplo</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projetos.html">Projetos</a>
+                    <ul>
+                        <li><a href="#educacao">Projetos Educação</a></li>
+                        <li><a href="#cultura">Projetos Cultura</a></li>
+                        <li><a href="#meio-ambiente">Projetos Meio Ambiente</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- HEADER -->
-  <header>
-    <h1>ONG Exemplo</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section class="hero">
+        <h1>Nossos Projetos Detalhados</h1>
+        <p>Conheça cada iniciativa que transforma vidas e fortalece nossa comunidade.</p>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Nossos Projetos</h2>
-    <p>Conheça os projetos que transformam vidas e impactam positivamente as comunidades.</p>
-  </section>
+    <!-- Projeto Educação -->
+    <section id="educacao" class="project">
+        <img src="https://via.placeholder.com/500x300" alt="Projeto Educação">
+        <div class="project-content">
+            <h2>Educação</h2>
+            <p>Nosso projeto de Educação promove cursos, oficinas, reforço escolar e atividades extracurriculares para crianças e jovens em situação de vulnerabilidade, oferecendo oportunidades de aprendizado e crescimento pessoal.</p>
+            <p>Objetivos principais: garantir alfabetização, melhorar desempenho escolar, desenvolver habilidades socioemocionais e incentivar a participação na comunidade.</p>
+            <button class="btn btn-primary">Saiba Mais</button>
+        </div>
+    </section>
 
-  <!-- CARDS DE PROJETOS -->
-  <section class="cards">
-    <div class="card">
-      <h3>Educação para Todos</h3>
-      <p>Oferecemos aulas e oficinas gratuitas para jovens e adultos em situação de vulnerabilidade.</p>
-    </div>
-    <div class="card">
-      <h3>Saúde na Comunidade</h3>
-      <p>Ações de prevenção, orientação e cuidados básicos de saúde com profissionais voluntários.</p>
-    </div>
-    <div class="card">
-      <h3>Inclusão Digital</h3>
-      <p>Capacitação em informática e tecnologias digitais para promover autonomia e empregabilidade.</p>
-    </div>
-    <div class="card">
-      <h3>Meio Ambiente</h3>
-      <p>Projetos educativos e práticos para conscientizar sobre sustentabilidade e preservação ambiental.</p>
-    </div>
-    <div class="card">
-      <h3>Arte e Cultura</h3>
-      <p>Oficinas de arte, música e cultura para crianças e jovens, incentivando expressão e criatividade.</p>
-    </div>
-  </section>
+    <!-- Projeto Cultura -->
+    <section id="cultura" class="project">
+        <div class="project-content">
+            <h2>Cultura</h2>
+            <p>O projeto Cultura incentiva atividades artísticas e culturais, como música, teatro, dança e artes plásticas, valorizando talentos locais, promovendo integração comunitária e preservando a diversidade cultural.</p>
+            <p>Além das oficinas e apresentações, realizamos eventos culturais abertos à comunidade, estimulando participação ativa e conscientização sobre a importância da cultura.</p>
+            <button class="btn btn-primary">Saiba Mais</button>
+        </div>
+        <img src="https://via.placeholder.com/500x300" alt="Projeto Cultura">
+    </section>
 
-  <!-- CTA CADASTRO -->
-  <section style="text-align:center; padding:60px 20px;">
-    <p>Quer fazer parte dessa transformação?</p>
-    <button class="btn-primary" onclick="window.location.href='cadastro.html'">Cadastre-se Agora</button>
-  </section>
+    <!-- Projeto Meio Ambiente -->
+    <section id="meio-ambiente" class="project">
+        <img src="https://via.placeholder.com/500x300" alt="Projeto Meio Ambiente">
+        <div class="project-content">
+            <h2>Meio Ambiente</h2>
+            <p>O projeto Meio Ambiente realiza ações de preservação, plantio de árvores, coleta de resíduos e campanhas de conscientização ambiental, promovendo sustentabilidade e responsabilidade ecológica.</p>
+            <p>Nosso objetivo é engajar a comunidade, educar sobre práticas sustentáveis e criar espaços verdes que beneficiem a população e o ecossistema local.</p>
+            <button class="btn btn-primary">Saiba Mais</button>
+        </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 ONG Exemplo. Todos os direitos reservados.
-  </footer>
+    <footer>
+        &copy; 2025 ONG Exemplo. Todos os direitos reservados.
+    </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
