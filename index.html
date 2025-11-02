@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -106,57 +106,33 @@
                 <div></div>
             </div>
             <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projetos.html">Projetos</a>
+                <!-- ALTERAÇÃO: links agora usam SPA -->
+                <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="#projetos" onclick="navigateTo('projetos')">Projetos</a>
                     <ul>
-                        <li><a href="#educacao">Projetos Educação</a></li>
-                        <li><a href="#cultura">Projetos Cultura</a></li>
-                        <li><a href="#meio-ambiente">Projetos Meio Ambiente</a></li>
+                        <li><a href="#educacao" onclick="navigateTo('projetos')">Projetos Educação</a></li>
+                        <li><a href="#cultura" onclick="navigateTo('projetos')">Projetos Cultura</a></li>
+                        <li><a href="#meio-ambiente" onclick="navigateTo('projetos')">Projetos Meio Ambiente</a></li>
                     </ul>
                 </li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="#cadastro" onclick="navigateTo('cadastro')">Cadastro</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Bem-vindo à ONG Exemplo</h1>
-        <p>Transformando vidas com projetos sociais de impacto.</p>
-        <button class="btn btn-secondary">Saiba Mais</button>
-    </section>
-
-    <section class="cards">
-        <div class="card">
-            <img src="https://via.placeholder.com/400x180" alt="Projeto Educação">
-            <div class="card-body">
-                <h3>Educação</h3>
-                <p>Oferecemos cursos, oficinas e reforço escolar para crianças e jovens, promovendo aprendizado e oportunidades.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/400x180" alt="Projeto Cultura">
-            <div class="card-body">
-                <h3>Cultura</h3>
-                <p>Incentivamos atividades culturais como música, teatro e dança, valorizando talentos locais e integração comunitária.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/400x180" alt="Projeto Meio Ambiente">
-            <div class="card-body">
-                <h3>Meio Ambiente</h3>
-                <p>Realizamos ações de preservação, conscientização ambiental e plantio de árvores para um futuro mais sustentável.</p>
-            </div>
-        </div>
-    </section>
+    <!-- ALTERAÇÃO: conteúdo substituído por container SPA -->
+    <main id="app"></main>
 
     <footer>
         &copy; 2025 ONG Exemplo. Todos os direitos reservados.
     </footer>
 
+    <!-- ALTERAÇÃO: script SPA adicionado -->
     <script>
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('show');
         }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
